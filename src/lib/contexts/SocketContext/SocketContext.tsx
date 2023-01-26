@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 import ISocketProvider from "./interfaces/ISocketProvider";
 
 //WebSocket URL
-let webSocketUrl = 'wss://demo.piesocket.com/v3/channel_123?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self';
+let webSocketUrl = 'wss://ws.thedevelopingweb.com';
 
 //WebSocket settings
 const reconnectTimeout = 10 * 1000; //10 Seconds

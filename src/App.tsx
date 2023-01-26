@@ -14,19 +14,18 @@ function App() {
 
   //When the socket is open, send the activity request
   useSocketOnOpen((message: any) => {
-    console.log('Socket Open: ', message.data);
+    console.log('Socket Connected');
   });
   
   //When we receieve a message from the WebSocket, update the actions
   useSocketOnMessage((message: MessageEvent) => {
-    console.log('Message for you sir! ', message.data);
     setLastTime(current => time);
-    setTime(current => new Date(message.data).toLocaleTimeString());
+    setTime(current => message.data);
   });
 
   //When we receieve a message from the WebSocket, update the actions
   useSocketOnClose((message: MessageEvent) => {
-    console.log('Socket Closed: ', message.data);
+    console.log('Socket Closed');
   });
 
   return (
