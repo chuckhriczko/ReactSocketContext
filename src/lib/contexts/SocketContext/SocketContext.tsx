@@ -1,14 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import ISocketProvider from "./interfaces/ISocketProvider";
 
-//WebSocket URL
-let webSocketUrl = 'wss://ws.thedevelopingweb.com';
-
 //WebSocket settings
+const webSocketUrl = 'wss://ws.thedevelopingweb.com/time';
 const reconnectTimeout = 10 * 1000; //10 Seconds
 
 //Reconnect timer
-let reconnectTimer: NodeJS.Timeout | null = null;
+let reconnectTimer: ReturnType<typeof setInterval> | null = null;
 
 //This is our WebSocket connection. We will use the context to access this
 //specific object.
